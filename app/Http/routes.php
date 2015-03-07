@@ -75,4 +75,14 @@ Route::get('fileentry/get/{filename}', [
 
 Route::post('fileentry/add',[
     'as' => 'addentry', 'uses' => 'FileEntryController@add']);*/
+Route::model('voters', 'Voter');
+Route::model('candidates', 'Candidate');
+Route::model('votecastings', 'Votecasting');
+
+
+
 Route::resource('/voters', 'VotersController');
+Route::resource('/candidates', 'CandidatesController');
+Route::resource('/votecastings', 'VotecastingsController');
+
+

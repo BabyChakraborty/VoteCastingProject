@@ -11,4 +11,4 @@
 |
 */
 
-$router->get('/', 'WelcomeController@index');
+Route::get('/', 'WelcomeController@index');

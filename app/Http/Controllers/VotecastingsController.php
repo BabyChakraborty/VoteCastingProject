@@ -1,44 +1,47 @@
 <?php namespace App\Http\Controllers;
 use Input;
 use Redirect;
-use App\Voter;
-
+use App\Votecasting;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class VoterEntriesController extends Controller {
+class VotecastingsController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index()
-	{
-        return view('voterEntries');
-	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
+    public function index()
+    {
+        $votecastings = Votecasting::all();
+        return view('votecastings.index', compact('votecastings'));
+    }
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        return view('votecastings.create');
+    }
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */
+    public function store()
+    {
+        $input = Input::all();
+        Votecasting::create( $input );
+
+        return Redirect::route('votecastings.index')->with('message', 'Vote casted');
+    }
 
 	/**
 	 * Display the specified resource.

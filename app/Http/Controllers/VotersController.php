@@ -15,31 +15,33 @@ class VotersController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
-	{
-        return view('voters');
-	}
+    public function index()
+    {
+        $voters = Voter::all();
+        return view('voters.index', compact('voters'));
+    }
 
-	/**
+    /**
 	 * Show the form for creating a new resource.
 	 *
 	 * @return Response
 	 */
-	public function create()
-	{
-		//
-	}
-
+    public function create()
+    {
+        return view('voters.create');
+    }
 	/**
 	 * Store a newly created resource in storage.
 	 *
 	 * @return Response
 	 */
-	public function store()
-	{
-		//
-	}
+    public function store()
+    {
+        $input = Input::all();
+        Voter::create( $input );
 
+        return Redirect::route('voters.index')->with('message', 'Vote created');
+    }
 	/**
 	 * Display the specified resource.
 	 *
@@ -68,11 +70,13 @@ class VotersController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
-	{
-		//
-	}
+    public function update(Voter $voter)
+    {
+        $input = array_except(Input::all(), '_method');
+        $voter->update($input);
 
+        return Redirect::route('voters.show', $voter->id)->with('message', 'Project updated.');
+    }
 	/**
 	 * Remove the specified resource from storage.
 	 *

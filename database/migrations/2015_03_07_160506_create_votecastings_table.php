@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVotersTable extends Migration {
+class CreateVotecastingsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,11 @@ class CreateVotersTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('voters', function(Blueprint $table)
+		Schema::create('votecastings', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->string('voter_name')->default('');
             $table->string('voter_id')->default('');
+            $table->string('candidate_symbol')->default('');
 			$table->timestamps();
 		});
 	}
@@ -28,7 +28,7 @@ class CreateVotersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('voters');
+		Schema::drop('votecastings');
 	}
 
 }

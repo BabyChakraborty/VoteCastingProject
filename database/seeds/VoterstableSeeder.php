@@ -10,8 +10,8 @@ class VoterstableSeeder extends Seeder {
         DB::table('voters')->delete();
 
         $voters= array(
-            ['id' => 1, 'voter_name' => 'Baby', 'voter_id' => '001', 'created_at' => new DateTime, 'updated_at' => new DateTime],
-            ['id' => 2, 'voter_name' => 'Project 2', 'voter_id' => '002', 'created_at' => new DateTime, 'updated_at' => new DateTime],
+            ['id' => 1, 'voter_name' => 'Baby', 'voter_id' => '001','voting_status' => false, 'created_at' => new DateTime, 'updated_at' => new DateTime],
+            ['id' => 2, 'voter_name' => 'Project 2', 'voter_id' => '002','voting_status' => false, 'created_at' => new DateTime, 'updated_at' => new DateTime],
 
         );
 

@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder {
 
         $this->call('VoterstableSeeder');
         $this->call('CandidatestableSeeder');
+        $this->call('VotecastingstableSeeder');
 	}
 
 }
