@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Metronic | Block UI</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+
+    <link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
+
+    <link href="../../assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css">
+    <link href="../../assets/admin/layout3/css/layout.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="favicon.ico"/>
+</head>
+
+<body>
+
+<div class="page-container">
+
+
+    <div class="page-content">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="portlet light">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-cogs font-green-sharp"></i>
+                                <span class="caption-subject font-green-sharp bold uppercase">Element Blocking</span>
+                            </div>
+
+                        </div>
+                        <div class="portlet-body">
+                            <p>
+                                <a class="btn red" data-toggle="modal" href="#basic">
+                                    Block Modal Content </a>
+                            </p>
+                            <div class="modal fade" id="basic" tabindex="-1" role="basic" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                            <h4 class="modal-title">Modal Title</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                <a href="javascript:;" class="btn blue" id="blockui_sample_3_1_0">
+                                                    Block Whole Modal </a>
+                                            </p>
+                                            <p>
+                                                <a href="javascript:;" class="btn green" id="blockui_sample_3_1">
+                                                    Block Below Element </a>
+                                                <a href="javascript:;" class="btn default" id="blockui_sample_3_1_1">
+                                                    Unblock Below Element </a>
+                                            </p>
+                                            <div id="blockui_sample_3_1_element">
+                                                <p>
+                                                    hello world
+                                                </p>
+                                                <p>
+                                                    hello world
+                                                </p>
+                                                <p>
+                                                    hello world
+                                                </p>
+
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn default" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn blue">Save changes</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+
+<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+                            <script src="../../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+                            <script src="../../assets/admin/pages/scripts/ui-blockui.js"></script><!--need for animation-->
+                           <script src="../../assets/global/scripts/metronic.js" type="text/javascript"></script>
+                            <script src="../../assets/admin/layout3/scripts/layout.js" type="text/javascript"></script>
+                            <script src="../../assets/admin/layout3/scripts/demo.js" type="text/javascript"></script>
+<script>
+    jQuery(document).ready(function() {
+        // initiate layout and plugins
+        Metronic.init(); // init metronic core components
+        Layout.init(); // init current layout
+        Demo.init(); // init demo features
+        UIBlockUI.init();
+    });
+</script>
+<!-- END JAVASCRIPTS -->
+<!-- END BODY -->
+                            </div>
+                        </body>
+</html>
